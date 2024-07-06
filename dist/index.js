@@ -55,14 +55,14 @@ function createFile(filepath) {
     console.log("An empty file has been created");
 }
 if (options.ls) {
-    const filepath = typeof options.ls === "string" ? options.ls : __dirname;
+    const filepath = typeof options.ls === "string" ? options.ls : process.cwd();
     listDirContents(filepath);
 }
 if (options.mkdir) {
-    createDir(path_1.default.resolve(__dirname, options.mkdir));
+    createDir(path_1.default.resolve(process.cwd(), options.mkdir));
 }
 if (options.touch) {
-    createFile(path_1.default.resolve(__dirname, options.touch));
+    createFile(path_1.default.resolve(process.cwd(), options.touch));
 }
 if (!process.argv.slice(2).length) {
     program.outputHelp();
